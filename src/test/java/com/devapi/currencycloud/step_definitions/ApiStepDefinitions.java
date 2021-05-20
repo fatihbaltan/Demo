@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class ApiStepDefinitions {
     String authToken;
     Response response;
+    double money = 1000;
 
     @Given("Given I logged CurrencyCloud api using login_id and api_key")
     public void given_I_logged_CurrencyCloud_api_using_login_id_and_api_key() {
@@ -20,7 +21,7 @@ public class ApiStepDefinitions {
 
     @When("Create a quote for Selling GBP and buying USD using the sell side")
     public void create_a_quote_for_Selling_GBP_and_buying_USD_using_the_sell_side() {
-        double money = 1000;
+
         response = given()
                 .and().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
@@ -35,7 +36,11 @@ public class ApiStepDefinitions {
 
     @Then("Verify the buy amount is correct to the rate")
     public void verify_the_buy_amount_is_correct_to_the_rate() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        assertEquals(response.statusCode(),200);
+        assertEquals(response.contentType(),ContentType.JSON);
+        double amount = Double.valueOf(response.path("client_rate")) *money;
+        assertEquals(response.path( "client_buy_amount"),String.valueOf(amount));
     }
+
+
 }
