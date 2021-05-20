@@ -7,7 +7,7 @@ Setup
 •	Configuration reader class is added to read configuration properties
 •	"ApiUtils" class  added for reusable static methods.
 
-Framework makes use of RestAssured API for performing webservice operation and Cucumber framework for achieving BDD approach. So reusable steps could be made. Parameterized steps used to achieve reusable for other currencies. 
+Framework makes use of RestAssured API for performing webservice operation and Cucumber framework for achieving BDD approach. So reusable steps could be made. Parameterized steps used to achieve reusability for other currencies.Data tables or Scenario outline could be added to achieve data driven testing. 
 
 Another  advantage of using BDD is everyone in the team can understand and participate testing process.
 
@@ -17,4 +17,5 @@ For assertions Junit Assert class is used
 
 Unfortunately I could not run the test cases due to some errors on the environment.
 
+Github link:https://github.com/fatihbaltan/Demo
 
