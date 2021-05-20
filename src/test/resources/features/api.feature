@@ -5,8 +5,10 @@ Feature: Creating quotation
   Scenario:  Create quote and verify the amount is correct
     When Create a quote for Selling "GBP" and buying "USD" using the "sell" side
     Then Verify the buy amount is correct to the rate
+    And End the API Session
 
   @wip
   Scenario:  Create quote and verify the amount is not correct
     When Create a quote for Selling "GBP" and buying "USD" using the "sell" side
     Then Verify the buy amount is not correct to the rate
+    And End the API Session

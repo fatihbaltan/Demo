@@ -53,6 +53,13 @@ public class ApiStepDefinitions {
         assertNotEquals(response.path( "client_buy_amount"),String.valueOf(amount));
     }
 
+    @Then("End the API Session")
+    public void end_the_API_Session() {
+        given()
+                .header("X-Auth-Token", authToken)
+                .when().post(ConfigurationReader.get("uri") + "/v2/authenticate/close_session");
+
+    }
 
 
 }
