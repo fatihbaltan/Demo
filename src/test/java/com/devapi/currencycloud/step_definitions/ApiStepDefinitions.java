@@ -8,12 +8,11 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
-
 public class ApiStepDefinitions {
     String authToken;
     Response response;
-    double amount=1000.00;
-    double money;
+    double amount;
+    double money=1000;
 
     @Given("I logged CurrencyCloud api using login_id and api_key")
     public void I_logged_CurrencyCloud_api_using_login_id_and_api_key() {
