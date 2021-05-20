@@ -1,7 +1,12 @@
 Feature: Creating quotation
-  @Background:
-  Given  Given I logged CurrencyCloud api using login_id and api_key
-@wip
+  Background:
+    Given  I logged CurrencyCloud api using login_id and api_key
+
   Scenario:  Create quote and verify the amount is correct
-    When Create a quote for Selling GBP and buying USD using the sell side
+    When Create a quote for Selling "GBP" and buying "USD" using the "sell" side
     Then Verify the buy amount is correct to the rate
+
+  @wip
+  Scenario:  Create quote and verify the amount is not correct
+    When Create a quote for Selling "GBP" and buying "USD" using the "sell" side
+    Then Verify the buy amount is not correct to the rate
