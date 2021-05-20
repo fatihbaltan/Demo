@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "com/devapi/currencycloud/step_definitions",
-        dryRun = false,
+        dryRun = true,
         tags = "@wip"
 )
 
